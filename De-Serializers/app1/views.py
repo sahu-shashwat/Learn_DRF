@@ -11,8 +11,11 @@ from django.views.decorators.csrf import csrf_exempt
 def student_create(request):
     if request.method=='POST':
         json_data=request.body
+        print(json_data)
         stream=io.BytesIO(json_data)
+        print(stream)
         pythondata=JSONParser().parse(stream)
+        print(pythondata)
         serializer=studentSerializers(data=pythondata)
         if serializer.is_valid():
             serializer.save()
