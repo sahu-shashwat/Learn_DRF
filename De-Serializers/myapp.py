@@ -7,6 +7,5 @@ data = {"name": "dev", "roll": 102, "city": "ranchi"}
 
 json_data = json.dumps(data)
 r = requests.post(url=URL, data=json_data)
-# print(r.text)
 data = r.json()
 print(data)
